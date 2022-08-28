@@ -106,7 +106,7 @@ background: linear-gradient(90deg, rgba(127,226,166,0.49653364763874297) 26%, rg
       }
       20% {
         color: yellowgreen;
-        transform: translateY(-10px)
+        /* transform: translateY(-10px) */
       }
   }
 
