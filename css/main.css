@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Sofia");
 
 .expert{
     background-color: orange;
@@ -87,6 +87,7 @@ background: linear-gradient(90deg, rgba(127,226,166,0.49653364763874297) 26%, rg
 .name{
     position: relative;
     color: blueviolet;
+    font-family: "Sofia", sans-serif;
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.3));
 
 }
@@ -95,6 +96,7 @@ background: linear-gradient(90deg, rgba(127,226,166,0.49653364763874297) 26%, rg
 .name span {
     position: relative;
     display: inline-block;
+    font-family: "Sofia", sans-serif;
     animation: flip 1s infinite;
     animation-delay: calc(.2s * var(--i));
     margin-inline: -5px;
