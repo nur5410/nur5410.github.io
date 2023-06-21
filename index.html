@@ -439,7 +439,36 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to send user information to the server
+    function logUserInformation() {
+      // Get user information (you can customize this based on your requirements)
+      const userInfo = {
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+       // ipAddress: '', // You'll need a server-side solution to retrieve the IP address
+        // Add any other relevant user information you want to log
+      };
 
+      // Send user information to the server
+      $.ajax({
+        url: 'log.php',
+        type: 'POST',
+        data: { userInfo: JSON.stringify(userInfo) },
+        success: function(response) {
+          console.log(response);
+        },
+        error: function(xhr, status, error) {
+          console.error('An error occurred while logging user information:', error);
+        }
+      });
+    }
+
+    $(document).ready(function() {
+      logUserInformation();
+    });
+  </script>
 
 </body>
 
