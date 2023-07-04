@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+}
+
+    .container{
+        background: aliceblue;
+    width: 500px;
+    height: 400px;
+    border: 3px solid;
+    position:relative;
+    }
+
+    .container button.startBtn{
+        position:absolute;
+        right:5px;
+        top:5px;
+    }
+
+    .container button.finishBtn{
+        position:absolute;
+        left:5px;
+        bottom:5px;
+    }
+    .container button.switchBtn{
+        position: absolute;
+        left: 246px;
+        top: 150px;
+    }
+
+    .container button.switchBtn2{
+        position: absolute;
+        left: 246px;
+        top: 100px;
+    }
+
+    .container div.wall1{
+        position:absolute;
+        width:450px;
+        height:5px;
+        background:green;
+        top:40px;
+        right:0
+    }
+
+    .container div.wall2{
+        position: absolute;
+        height: 286px;
+        width: 5px;
+        background: green;
+        bottom: 69px;
+        left: 50px;
+    }
+    .container div.wall3{
+        position: absolute;
+    height: 5px;
+    width: 470px;
+    background: green;
+    bottom: 40px;
+    right: 30px;
+    }
+
+    .container div.wall4{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: red;
+    top: 45px;
+    left: 55px;
+    }
+
+    
+    .container div.wall5{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: blue;
+    bottom: 45px;
+    left: 85px;
+    }
+
+    .container div.wall6{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: green;
+    top: 45px;
+    left: 115px;
+    }
+  
+    .container div.wall7{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: red;
+    bottom: 45px;
+    left: 145px;
+    }
+
+    .container div.wall8{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: green;
+    top: 45px;
+    left: 175px;
+    }
+
+    .container div.wall9{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: blue;
+    bottom: 45px;
+    left: 205px;
+    }
+    .container div.wall10{
+        position: absolute;
+    height: 265px;
+    width: 5px;
+    background: green;
+    bottom: 68px;
+    left: 235px;
+    }
+
+    .container div.wall11{
+        position: absolute;
+    height: 288px;
+    width: 5px;
+    background: green;
+    bottom: 45px;
+    left: 310px;
+    }
+
+    .container div.wall12{
+        position: absolute;
+    height: 5px;
+    width: 45px;
+    background: green;
+    top: 67px;
+    left: 239px;
+    }
+
+    .container div.wall13{
+        position: absolute;
+    height: 5px;
+    width: 72px;
+    background: green;
+    top: 134px;
+    left: 239px;
+    }
+    .container div.wall14{
+        position: absolute;
+    height: 1px;
+    width: 1px;
+    background: grey;
+    top: 320px;
+    left: 275px;
+    border-radius: 50%;
+    }
+    .container div.wall15{
+        position: absolute;
+    height: 1px;
+    width: 1px;
+    background: grey;
+    top: 240px;
+    left: 275px;
+    border-radius: 50%;
+    }
+
+    .container div.wall16{
+        position: absolute;
+    height: 5px;
+    width: 24px;
+    background: red;
+    top: 67px;
+    left: 285px;
+
+    }
+
+    /* ======================================*/
+    .container div.wall17{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: red;
+    top: 45px;
+    left:315px;
+    }
+
+    
+    .container div.wall18{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: blue;
+    bottom: 45px;
+    left: 345px;
+    }
+
+    .container div.wall19{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: green;
+    top: 45px;
+    left: 375px;
+    }
+  
+    .container div.wall20{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: red;
+    bottom: 45px;
+    left: 405px;
+    }
+
+    .container div.wall21{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: green;
+    top: 45px;
+    left: 435px;
+    }
+
+    .container div.wall22{
+        position: absolute;
+    height: 30px;
+    width: 30px;
+    background: blue;
+    bottom: 45px;
+    left: 465px;
+    }
+
+    .container div.wall23{
+        position: absolute;
+    height: 3px;
+    width: 500px;
+    background: red;
+    bottom: -3px;
+    right: 0;
+    }
+
+    .container div.wall24{
+        position: absolute;
+    height: 406px;
+    width: 3px;
+    background: red;
+    bottom: -3px;
+    right: -3px;
+    }
+    .container div.wall25{
+        position: absolute;
+    height: 3px;
+    width: 500px;
+    background: red;
+    top: -3px;
+    right: 0;
+    }
+    .container div.wall26{
+        position: absolute;
+    height: 406px;
+    width: 3px;
+    background: red;
+    bottom: -3px;
+    left: -3px;
+    }
+    .container div.wall27{
+        position: absolute;
+    height: 5px;
+    width: 28px;
+    background: red;
+    bottom: 40px;
+    right: 1px;
+    }
+
+
+.hide{
+    display:none
+}
+    .wallx{
+        background:#6f6a6a!important;
+        /* height:80px; */
+    }
+    .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.wall{
+    display:block!important;
+}
+.modal3 {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 0, 0.8);
+}
+@media screen and (max-width: 1000px) {
+    .modal3 {
+        display: block;
+    }
+}
+    </style>
+<body>
+    <div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Game Over!</h2>
+    <p>Please restart the game.</p>
+  </div>
+</div>
+
+
+<div id="modal" class="modal modal2">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Finished!</h2>
+    <p></p>
+  </div>
+</div>
+
+<div id="modal" class="modal modal3">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Not Supported!</h2>
+    <p>Please switch to PC to play the game.</p>
+  </div>
+</div>
+
+    <div class="container">
+        <button class="startBtn">Start</button>
+        <button class="finishBtn">Finish</button>
+        <button class="switchBtn">Sw- 2</button>
+        <button class="switchBtn2">Sw- 1</button>
+        <div class="wall1 wall wallx"></div>
+        <div class="wall2 wall wallx"></div>
+        <div class="wall3 wall wallx"></div>
+
+        <div class="wall4 wall wallx"></div>
+        <div class="wall5 wall wallx"></div>
+        <div class="wall6 wall wallx"></div>
+        <div class="wall7 wall wallx"></div>
+        <div class="wall8 wall wallx"></div>
+        <div class="wall9 wall wallx"></div>
+
+        <div class="wall10 wall wallx"></div>
+        <div class="wall11 wall wallx"></div>
+        <div class="wall12 wall wallx"></div>
+        <div class="wall13 wall wallx"></div>
+        <div class="wall14 wall wallx"></div>
+        <div class="wall15 wall wallx"></div>
+        <div class="wall16 wall wallx"></div>
+
+        <div class="wall17 wall wallx"></div>
+        <div class="wall18 wall wallx"></div>
+        <div class="wall19 wall wallx"></div>
+        <div class="wall20 wall wallx"></div>
+        <div class="wall21 wall wallx"></div>
+        <div class="wall22 wall wallx"></div>
+        <div class="wall23 wall wallx"></div>
+
+        <div class="wall24 wall wallx"></div>
+        <div class="wall25 wall wallx"></div>
+        <div class="wall26 wall wallx"></div>
+        <div class="wall27 wall wallx"></div>
+
+    </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+        $(document).ready(function() {
+
+            var started = false;
+
+
+        $('.startBtn').on('click', function(){
+            
+            $('.wall').removeClass('wallx');
+            // $('.cycle').addClass('wall');
+            started = true;
+            // $('.wallx').css('backgroundColor', '#51ddf2'); // Update the line here
+                addWall1();
+                addWall2();
+
+        })
+        
+        $('.finishBtn').on('click', function(){
+            started = false;
+            gameFinish();
+            $('.wall').addClass('wallx');
+
+        })
+
+        $('.switchBtn').on('click', function(){
+            removeWall1();
+        })
+
+        
+        $('.switchBtn2').on('click', function(){
+            removeWall2();
+        })
+
+        function removeWall1(){
+            $('.wall16').removeClass('wall');
+            $('.wall16').addClass('hide');
+
+            $('.wall5').removeClass('wall');
+            $('.wall5').addClass('hide');
+
+            $('.wall7').removeClass('wall');
+            $('.wall7').addClass('hide');
+
+            $('.wall9').removeClass('wall');
+            $('.wall9').addClass('hide');
+
+            
+            $('.wall14').removeClass('wall');
+            $('.wall14').addClass('hide');
+        }
+
+        function addWall1(){
+            $('.wall16').removeClass('hide');
+            $('.wall16').addClass('wall');
+
+            $('.wall5').removeClass('hide');
+            $('.wall5').addClass('wall');
+
+            $('.wall7').removeClass('hide');
+            $('.wall7').addClass('wall');
+
+            $('.wall9').removeClass('hide');
+            $('.wall9').addClass('wall');
+
+            
+            $('.wall14').addClass('wall');
+            $('.wall14').removeClass('hide');
+
+        }
+        
+        function removeWall2(){
+            $('.wall27').removeClass('wall');
+            $('.wall27').addClass('hide');
+
+            $('.wall17').removeClass('wall');
+            $('.wall17').addClass('hide');
+
+            $('.wall19').removeClass('wall');
+            $('.wall19').addClass('hide');
+
+            $('.wall21').removeClass('wall');
+            $('.wall21').addClass('hide');
+        }
+        function addWall2(){
+            $('.wall27').removeClass('hide');
+            $('.wall27').addClass('wall');
+
+            $('.wall17').removeClass('hide');
+            $('.wall17').addClass('wall');
+
+            $('.wall19').removeClass('hide');
+            $('.wall19').addClass('wall');
+
+            $('.wall21').removeClass('hide');
+            $('.wall21').addClass('wall');
+        }
+
+
+         const container = document.querySelector('.container');
+          const walls = document.querySelectorAll('.wall');
+          const containerRect = container.getBoundingClientRect(); 
+        //   console.log(containerRect)
+
+              container.addEventListener('mousemove', (e) => {
+                
+
+                walls.forEach(wall => {
+                    const rect = wall.getBoundingClientRect(); 
+
+                    const wallBottom = rect.bottom;
+                    const wallTop = rect.top;
+                    const wallRight = rect.right;
+                    const wallLeft = rect.left;
+
+                    const mouseX = e.screenX;
+                    const mouseY = e.screenY-104;
+
+                    // console.log(wallTop, wallBottom, wallLeft, wallRight);
+                    // console.log(e.screenX, e.screenY);
+
+                  if(started){
+
+                      if(mouseX < wallRight && mouseX > wallLeft && mouseY < wallBottom && mouseY > wallTop){
+                          console.log("hi");
+                          gameOver();
+                      }
+                  }
+
+              });
+            //   mouseX = e.screenX;
+            //   mouseY = e.screenY;
+
+          });
+
+        function gameOver(){
+            started = false;
+            $('#modal').fadeIn();
+            $('.close').click(function() {
+                $('#modal').fadeOut();
+                addWall1();
+                addWall2();
+                $('.wall').addClass('wallx');
+
+            });
+        }
+
+        function gameFinish(){
+            started = false;
+            $('.modal2').fadeIn();
+            $('.close').click(function() {
+                $('.modal2').fadeOut();
+                addWall1();
+                addWall2();
+
+            });
+        }
+
+
+            function animateElement() {
+                $('.wall4').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall4').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement); 
+                });
+            }
+
+            function animateElement2() {
+                    $('.wall5').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall5').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement2); 
+                    });
+               
+            }
+
+            function animateElement3() {
+                $('.wall6').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall6').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement3); 
+                });
+            }
+
+            function animateElement4() {
+                    $('.wall7').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall7').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement4); 
+                    });
+               
+            }
+            function animateElement5() {
+                $('.wall8').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall8').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement5); 
+                });
+            }
+
+            function animateElement6() {
+                    $('.wall9').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall9').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement6); 
+                    });
+               
+            }
+
+            //=====================================
+
+            function animateElement7() {
+                $('.wall14').animate({
+                    width: '+=70px', 
+                    height:'+=70px', 
+                    left: '-=35',
+                    top: '-=35',
+                    }, 100, function() {
+                    
+                    $('.wall14').animate({
+                        width: '-=70px', 
+                        height:'-=70px', 
+                        left: '+=35',
+                        top: '+=35',
+                    }, 1500, animateElement7); 
+                    });
+               
+            }
+            function animateElement8() {
+                $('.wall15').animate({
+                    width: '+=70px', 
+                    height:'+=70px', 
+                    left: '-=35',
+                    top: '-=35',
+                    }, 100, function() {
+                    
+                    $('.wall15').animate({
+                        width: '-=70px', 
+                        height:'-=70px', 
+                        left: '+=35',
+                        top: '+=35',
+                    }, 1500, animateElement8); 
+                    });
+               
+            }
+
+            //==============================================
+
+            function animateElement9() {
+                $('.wall17').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall17').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement9); 
+                });
+            }
+
+            function animateElement10() {
+                    $('.wall18').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall18').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement10); 
+                    });
+               
+            }
+
+            function animateElement11() {
+                $('.wall19').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall19').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement11); 
+                });
+            }
+
+            function animateElement12() {
+                    $('.wall20').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall20').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement12); 
+                    });
+               
+            }
+            function animateElement13() {
+                $('.wall21').animate({
+                top: '+=282px', 
+                }, 1500, function() {
+                
+                $('.wall21').animate({
+                    top: '-=282px', 
+                }, 1500, animateElement13); 
+                });
+            }
+
+            function animateElement14() {
+                    $('.wall22').animate({
+                    top: '-=282px', 
+                    }, 1500, function() {
+                    
+                    $('.wall22').animate({
+                        top: '+=282px', 
+                    }, 1500, animateElement14); 
+                    });
+               
+            }
+
+            //================================================
+
+
+
+            animateElement();
+            animateElement2();
+            animateElement3();
+            animateElement4();
+            animateElement5();
+            animateElement6();
+            animateElement7();
+            animateElement8();
+
+            animateElement9();
+            animateElement10();
+            animateElement11();
+            animateElement12();
+            animateElement13();
+            animateElement14();
+
+
+        //     function displayModalOnMobile() {
+        //     if (window.innerWidth < 700) {
+        //         document.getElementByClassName('modal3').style.display = 'block';
+        //     }
+        // }
+
+        // // Call the function on page load
+        // window.onload = displayModalOnMobile;
+        })
+    </script>
